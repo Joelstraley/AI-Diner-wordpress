@@ -2280,7 +2280,7 @@ function get_post_states( $post ) {
 	}
 
 	if ( ! empty( $post->post_password ) ) {
-		$post_states['protected'] = _x( 'Password protected', 'post status' );
+		$post_states['protected'] = _x( ' protected', 'post status' );
 	}
 
 	if ( 'private' === $post->post_status && 'private' !== $post_status ) {

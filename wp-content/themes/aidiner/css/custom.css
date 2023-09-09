@@ -56,8 +56,8 @@ a {
 }
 
 .hero {
-    padding-top: 160px;
-    padding-bottom: 220px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -163,21 +163,92 @@ a {
     pointer-events: none;
 }
 
-.food-title {
+.section-heading {
     font-size: 20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
     text-transform: lowercase;
-    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(21, 20, 20);
+    /* From https://css.glass */
+    background: rgb(236 2 251 / 48%);
+/*     border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.8px);
+    -webkit-backdrop-filter: blur(5.8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.food-grid {
+.grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 50px;
     grid-column-gap: 20px;
     max-width: 1220px;
-    margin-left: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.location-description {
+    max-width: 480px;
     margin-right: auto;
+}
+
+.location-info {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.location-description h3 {
+    font-size: 12px;
+    margin: 0;
+}
+
+.location-description p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.map-inner {
+    position: relative;
+    padding-bottom: 75%;
+}
+
+.map-inner iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.site-footer {
+    padding: 10px 30px 20px 30px;
+    border-top: solid 1px black;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: black;
+}
+
+.footer-copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-social {
+    display: flex;
+}
+
+.social-link, .social-link img {
+    display: block;
+    color: yellow;
+    text-shadow: 1px 1px black;
+}
+
+.social-link {
+    margin-left: 5px;
 }

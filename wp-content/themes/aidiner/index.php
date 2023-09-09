@@ -32,15 +32,15 @@ get_header();
 			<div class="intro-inner">
 				<h2 class="intro-title"></h2>
 				<p class="intro-description">
-					hope you're hungry <span class="inner-span">...for art.</span>
+					hope you're hungry <span class="inner-span">...for art</span>
 				</p>
 				<h2 class="intro-title"></h2>
 			</div>
 		</div>
 
-		<div class="food-title" id="food">menu</div>
+		<div class="section-heading" id="food">menu</div>
 
-		<div class="food-grid">
+		<div class="grid">
 			<?php
 			if ( have_posts() ) :
 
@@ -74,8 +74,37 @@ get_header();
 			endif;
 			?>
 		 </div>
+		<div class="section-heading" id="locations">
+			Directions to The AI Diner
+		</div>
+		<div class="locations">
+			<div class="location grid">
+				<div class="map">
+					<div class="map-inner">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2360.2205277443713!2d-122.41676787784353!3d37.76288736524326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e3aef063141%3A0xcd8d4b8ec7bc4d0c!2sOpenAI!5e0!3m2!1sen!2sus!4v1694290196217!5m2!1sen!2sus" 
+						width="600" height="450" style="border:0;" 
+						allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+					</iframe>
+
+					</div>
+				</div>
+
+				<div class="location-info">
+					<div class="location-description">
+						<h3>Address</h3>
+						<p>3180 18th St, San Francisco, CA 94110</p>
+						<h3>Email</h3>
+						<p>theAIdiner@openai.com</p>
+						<h3>Directions</h3>
+						<p>just go ask chatGPT</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</main><!-- #main -->
+
+
 
 <?php
 get_footer();
