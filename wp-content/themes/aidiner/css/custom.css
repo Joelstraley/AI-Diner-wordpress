@@ -252,3 +252,23 @@ a {
 .social-link {
     margin-left: 5px;
 }
+
+@media (max-width: 680px) {
+    .site-header {
+        padding: 20px;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .menu-item {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 14px;
+    }
+
+    .menu-item span {
+        display: none;
+    }
+}

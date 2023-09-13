@@ -29,7 +29,7 @@ get_header();
 		</div>
 
 		<div class="intro">
-			<div class="intro-inner">
+			<div class="intro-inner" id="desc">
 				<h2 class="intro-title"></h2>
 				<p class="intro-description">
 					hope you're hungry <span class="inner-span">...for art</span>
@@ -38,7 +38,7 @@ get_header();
 			</div>
 		</div>
 
-		<div class="section-heading" id="food">menu</div>
+		<div class="section-heading" id="menu">menu</div>
 
 		<div class="grid">
 			<?php
@@ -74,7 +74,7 @@ get_header();
 			endif;
 			?>
 		 </div>
-		<div class="section-heading" id="locations">
+		<div class="section-heading" id="directions">
 			Directions to The AI Diner
 		</div>
 		<div class="locations">
