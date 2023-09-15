@@ -183,3 +183,50 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 add_theme_support( 'custom-header',array(
 	'video' => true,
    ) );
+
+   // Register Custom Post Type 
+   //Intro Custom Post Type
+function custom_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Intros', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Intro', 'Post Type Singular Name', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                => $labels,
+		'taxonomies'            => array( 'category' ),
+		'public'                => true,
+	);
+	register_post_type( 'intro', $args );
+
+}
+add_action( 'init', 'custom_post_type', 0 );
+
+   //Locations Custom Post Type
+
+function add_locations() {
+
+	$labels = array(
+		'name'                  => _x( 'Locations', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Location', 'Post Type Singular Name', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                => $labels,
+		'taxonomies'            => array( 'category' ),
+		'public'                => true,
+	);
+	register_post_type( 'location', $args );
+
+}
+add_action( 'init', 'add_locations', 0 );
+
+//Make category Descriptions dynamic 
+
+function get_category_description($query) {
+	query_posts($query . '&posts_per_page=1');
+	while ( have_posts() ) {
+		the_post();
+		$category = get_the_category();
+		echo $category[0]->category_description;
+	}
+}

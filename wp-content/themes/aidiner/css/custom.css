@@ -5,6 +5,8 @@ body {
     font-size: 16px;
     color: white;
     line-height: 1.5;
+    /* background-color: #19cee4;
+     */
 }
 
 a {
@@ -47,6 +49,7 @@ a {
     padding-left: 0;
     margin: 0;
     list-style: none;
+    color: black;
 }
 
 .menu-item {
@@ -63,7 +66,7 @@ a {
 }
 
 .container {
-    max-width: 1380px;
+     max-width: 1380px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -75,20 +78,35 @@ a {
 }
 
 .hero-text {
+    display: flex;
+    flex-direction: column;
     font-size: 9rem;
     line-height: 1;
     text-align: center;
     color: #ffe800;
     text-shadow: 0 3px 0 rgba(0, 0, 0,.50);
+    margin: 0;
 }
 
 .hero-description {
-    margin-top: -5em;
+    /* margin-top: -5em; */
     position: absolute;
     left: 0;
     width: 100%;
     text-align: center;
     color: black;
+}
+
+.hero-slogan {
+    text-align: center;
+    padding: 50px 0 10px 0;
+    color: black;
+    text-decoration: underline;
+}
+
+.hero-slogan--menu-item {
+    color: yellow;
+    text-decoration: none;
 }
 
 .dall-e {
@@ -107,7 +125,6 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -119,6 +136,11 @@ a {
 .intro-title {
     display: inline-block;
     border-bottom: 3px solid #ffe800;;
+}
+
+.intro-description {
+    color: burlywood;
+    padding: 0 30px 0 30px;
 }
 
 .inner-span {
@@ -137,7 +159,7 @@ a {
 }
 
 .entry-title, .entry-price {
-    color: white;
+    color: black;
     margin: 0;
     line-height: 1;
 }
@@ -186,7 +208,6 @@ a {
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 50px;
     grid-column-gap: 20px;
-    max-width: 1220px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -194,6 +215,8 @@ a {
 .location-description {
     max-width: 480px;
     margin-right: auto;
+    color: #91ff00;
+    text-shadow: 1.25px 1px black;
 }
 
 .location-info {
@@ -230,7 +253,8 @@ a {
     border-top: solid 1px black;
     font-size: 12px;
     font-family: sans-serif;
-    color: black;
+    color: #91ff00;
+    text-shadow: 1.25px 1px black;
 }
 
 .footer-copyright {
@@ -253,6 +277,15 @@ a {
     margin-left: 5px;
 }
 
+
+@media (max-width: 1100px) {
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 160px;
+    }
+
+}
+
 @media (max-width: 680px) {
     .site-header {
         padding: 20px;
@@ -271,4 +304,24 @@ a {
     .menu-item span {
         display: none;
     }
+
+    .hero-text {
+        font-size: 64px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero {
+
+    }
+    .hero-description {
+        font-size: 16px;
+
+    }
+
 }

@@ -20,28 +20,55 @@ get_header();
 		<div class="hero">
 			<div class="hero-inner container">
 				<h1 class="hero-text">
-					Welcome to The AI Diner
+					Welcome to <span>The AI Diner</span>
 				</h1>
 				<p class="hero-description">
 					this is what <span class="dall-e">DALL-E</span> thinks food looks like
 				<p>
+				<h2 class="hero-slogan">Home of the Famous
+						<?php
+						query_posts('posts_per_page=1&category_name=menu&orderby=rand');
+						?>
+						<?php if ( have_posts() ) : while ( have_posts()) : the_post(); ?> 
+				    <span class="hero-slogan--menu-item">
+						<?php the_title() ?>
+					<span>
+
+				</h2>
+					<?php 
+						endwhile;
+						endif;
+					?>
 			</div>
 		</div>
 
-		<div class="intro">
-			<div class="intro-inner" id="desc">
-				<h2 class="intro-title"></h2>
-				<p class="intro-description">
-					hope you're hungry <span class="inner-span">...for art</span>
-				</p>
-				<h2 class="intro-title"></h2>
+		<!-- Here we query for our custom post type 'intro' and get that single post -->
+		<?php
+		query_posts('posts_per_page=1&post_type=intro');
+		?>
+		<?php if ( have_posts() ) : while ( have_posts()) : the_post(); ?> 
+			<div class="intro">
+				<div class="intro-inner" id="desc">
+					<h2 class="intro-title"></h2>
+					<div class="intro-description">
+						<?php the_title(); ?>
+						<?php the_content(); ?>
+					</div>
+					<h2 class="intro-title"></h2>
+				</div>
 			</div>
-		</div>
+			<?php 
+				endwhile;
+				endif;
+			?>
 
-		<div class="section-heading" id="menu">menu</div>
+		<div class="section-heading" id="menu">
+			<?php get_category_description('category_name=menu'); ?>
+		</div>
 
 		<div class="grid">
 			<?php
+			query_posts('posts_per_page=20&category_name=menu');
 			if ( have_posts() ) :
 
 				if ( is_home() && ! is_front_page() ) :
@@ -51,7 +78,6 @@ get_header();
 					</header>
 					<?php
 				endif;
-
 				/* Start the Loop */
 				while ( have_posts() ) :
 					the_post();
@@ -75,31 +101,29 @@ get_header();
 			?>
 		 </div>
 		<div class="section-heading" id="directions">
-			Directions to The AI Diner
+		<?php get_category_description('post_type=Location'); ?>
 		</div>
 		<div class="locations">
+		<!-- Here we query for our custom post type 'locations' -->
+		<?php
+		query_posts('post_type=location');
+		?>
+		<?php if ( have_posts() ) : while ( have_posts()) : the_post(); ?> 
 			<div class="location grid">
 				<div class="map">
 					<div class="map-inner">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2360.2205277443713!2d-122.41676787784353!3d37.76288736524326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e3aef063141%3A0xcd8d4b8ec7bc4d0c!2sOpenAI!5e0!3m2!1sen!2sus!4v1694290196217!5m2!1sen!2sus" 
-						width="600" height="450" style="border:0;" 
-						allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-					</iframe>
-
+						<?php if( get_field('map') ); ?>
+						<?php the_field('map'); ?>
 					</div>
 				</div>
 
 				<div class="location-info">
 					<div class="location-description">
-						<h3>Address</h3>
-						<p>3180 18th St, San Francisco, CA 94110</p>
-						<h3>Email</h3>
-						<p>theAIdiner@openai.com</p>
-						<h3>Directions</h3>
-						<p>just go ask chatGPT</p>
+						<?php the_content(); ?>
 					</div>
 				</div>
 			</div>
+			<?php endwhile; endif; ?>
 		</div>
 
 	</main><!-- #main -->
